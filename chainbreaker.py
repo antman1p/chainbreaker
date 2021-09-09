@@ -19,7 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
-from chainbreaker import struct
+import struct
 from chainbreaker import pbkdf2
 from chainbreaker import schema
 from pbkdf2 import PBKDF2
