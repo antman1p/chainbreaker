@@ -734,7 +734,7 @@ class Chainbreaker(object):
                     self.logger.info('\t [-] Exported: %s' % file_path)
                     fp.write(export_content)
                     return True
-            except OSError, e:
+            except OSError as e:
                 self.logger.critical('Exception while attempting to export %s: %s' % (file_path, e))
 
         @property
