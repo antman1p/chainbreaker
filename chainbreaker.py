@@ -20,14 +20,12 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 #
 import struct
-from chainbreaker import pbkdf2
-from chainbreaker import schema
-from pbkdf2 import PBKDF2
-from schema import *
-from schema import _APPL_DB_HEADER, _APPL_DB_SCHEMA, _TABLE_HEADER, _DB_BLOB, _GENERIC_PW_HEADER, \
+from chainbreaker.pbkdf2 import PBKDF2
+from chainbreaker.schema import *
+from chainbreaker.schema import _APPL_DB_HEADER, _APPL_DB_SCHEMA, _TABLE_HEADER, _DB_BLOB, _GENERIC_PW_HEADER, \
     _KEY_BLOB_REC_HEADER, _KEY_BLOB, _SSGP, _INTERNET_PW_HEADER, _APPLE_SHARE_HEADER, _X509_CERT_HEADER, _SECKEY_HEADER, \
     _UNLOCK_BLOB, _KEYCHAIN_TIME, _INT, _FOUR_CHAR_CODE, _LV, _TABLE_ID, _RECORD_OFFSET
-from pyDes import TripleDES, CBC
+from chainbreaker.pyDes import TripleDES, CBC
 from binascii import unhexlify, hexlify
 import logging
 import base64
