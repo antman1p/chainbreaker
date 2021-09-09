@@ -203,7 +203,7 @@ class Chainbreaker(object):
         table_list = []
         schema_info = _APPL_DB_SCHEMA(self.kc_buffer[offset:offset + _APPL_DB_SCHEMA.STRUCT.size])
 
-        for i in xrange(schema_info.TableCount):
+        for i in range(schema_info.TableCount):
             base_addr = _APPL_DB_HEADER.STRUCT.size + _APPL_DB_SCHEMA.STRUCT.size
             table_list.append(_TABLE_ID(self.kc_buffer[base_addr + (Chainbreaker.ATOM_SIZE * i):base_addr + (
                     Chainbreaker.ATOM_SIZE * i) + Chainbreaker.ATOM_SIZE]).Value)
@@ -244,7 +244,7 @@ class Chainbreaker(object):
     # Returns a dict of table indexes keyed off of the TableId
     def _get_table_name_to_list(self, record_list, table_list):
         table_dict = {}
-        for count in xrange(len(record_list)):
+        for count in range(len(record_list)):
             table_metadata, generic_list = self._get_table(table_list[count])
             table_dict[table_metadata.TableId] = count  # extract valid table list
 
