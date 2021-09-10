@@ -73,9 +73,6 @@ class Chainbreaker(object):
         if not self._is_valid_keychain():
             self.logger.warning('Keychain signature does not match. are you sure this is a valid keychain file?')
 
-        ### DEBUG:
-        print("Is the keychain valid: " + str(self._is_valid_keychain()))
-
         self.unlock_password = unlock_password
         self.unlock_key = unlock_key
         self.unlock_file = unlock_file
@@ -183,6 +180,8 @@ class Chainbreaker(object):
     # A valid keychain begins with "kych"
     def _is_valid_keychain(self):
         if self.kc_buffer[0:4] != Chainbreaker.KEYCHAIN_SIGNATURE:
+            ##DEBUG:
+            print("This is the 1st 4 bytes of the kc_buffer: " + str(self.kc_buffer[0:4]) + " and this is the KEYCHAIN_SIG: " + Chainbreaker.KEYCHAIN_SIGNATURE)
             return False
         return True
 
