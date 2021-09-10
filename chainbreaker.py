@@ -179,10 +179,6 @@ class Chainbreaker(object):
     # Simple check to make sure the keychain we're looking at is valid.
     # A valid keychain begins with "kych"
     def _is_valid_keychain(self):
-
-        ##DEBUG:
-        print("This is the 4 bytes kc_buffer in the validity check: " + str(self.kc_buffer[0:4]) + " Vs. the KEYCHAIN_SIG: " + Chainbreaker.KEYCHAIN_SIGNATURE)
-
         if self.kc_buffer[0:4] != Chainbreaker.KEYCHAIN_SIGNATURE:
             return False
         return True
