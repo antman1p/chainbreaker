@@ -163,7 +163,7 @@ class Chainbreaker(object):
             with open(self.filepath, 'rb') as fp:
                 self.kc_buffer = fp.read()
             ## DEBUG:
-            print("This is the kc_buffer : " + self.kc_bugger)
+            print("This is the kc_buffer : " + self.kc_buffer)
 
             if self.kc_buffer:
                 self.header = _APPL_DB_HEADER(self.kc_buffer[:_APPL_DB_HEADER.STRUCT.size])
