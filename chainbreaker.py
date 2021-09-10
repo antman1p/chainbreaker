@@ -31,6 +31,7 @@ import logging
 import base64
 import string
 import uuid
+import sys
 
 class Chainbreaker(object):
     ATOM_SIZE = 4
@@ -182,6 +183,7 @@ class Chainbreaker(object):
         if self.kc_buffer[0:4] != Chainbreaker.KEYCHAIN_SIGNATURE:
             ##DEBUG:
             print("This is the 1st 4 bytes of the kc_buffer: " + str(self.kc_buffer[0:4]) + " and this is the KEYCHAIN_SIG: " + Chainbreaker.KEYCHAIN_SIGNATURE)
+            sys.stdout.flush()
             return False
         return True
 
