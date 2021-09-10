@@ -562,6 +562,8 @@ class Chainbreaker(object):
 
     @filepath.setter
     def filepath(self, value):
+        ## DEBUG:
+        print("This is the value inside of filepath.setter: " + value)
         self._filepath = value
         if self._filepath:
             self._read_keychain_to_buffer()
