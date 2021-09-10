@@ -162,6 +162,8 @@ class Chainbreaker(object):
         try:
             with open(self.filepath, 'rb') as fp:
                 self.kc_buffer = fp.read()
+            ## DEBUG:
+            print("This is the kc_buffer : " + self.kc_bugger)
 
             if self.kc_buffer:
                 self.header = _APPL_DB_HEADER(self.kc_buffer[:_APPL_DB_HEADER.STRUCT.size])
@@ -562,8 +564,6 @@ class Chainbreaker(object):
 
     @filepath.setter
     def filepath(self, value):
-        ## DEBUG:
-        print("This is the value inside of filepath.setter: " + value)
         self._filepath = value
         if self._filepath:
             self._read_keychain_to_buffer()
