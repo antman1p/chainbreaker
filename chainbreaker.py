@@ -70,6 +70,9 @@ class Chainbreaker(object):
 
         self.filepath = filepath
 
+        ## DEBUG:
+        print("This is the filepath just before the buffer check : " + filepath)
+        
         if not self._is_valid_keychain():
             self.logger.warning('Keychain signature does not match. are you sure this is a valid keychain file?')
 
@@ -162,9 +165,6 @@ class Chainbreaker(object):
         try:
             with open(self.filepath, 'rb') as fp:
                 self.kc_buffer = fp.read()
-            ## DEBUG:
-            print("This is the kc_buffer : " + str(self.kc_buffer))
-
             if self.kc_buffer:
                 self.header = _APPL_DB_HEADER(self.kc_buffer[:_APPL_DB_HEADER.STRUCT.size])
                 self.schema_info, self.table_list = self._get_schema_info(self.header.SchemaOffset)
