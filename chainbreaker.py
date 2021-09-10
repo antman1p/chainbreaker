@@ -73,6 +73,9 @@ class Chainbreaker(object):
         if not self._is_valid_keychain():
             self.logger.warning('Keychain signature does not match. are you sure this is a valid keychain file?')
 
+        ### DEBUG:
+        print("Is the keychain valid: " + str(self._is_valid_keychain()))
+
         self.unlock_password = unlock_password
         self.unlock_key = unlock_key
         self.unlock_file = unlock_file
