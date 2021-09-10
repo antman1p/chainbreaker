@@ -41,6 +41,8 @@ class Chainbreaker(object):
     KEYCHAIN_LOCKED_SIGNATURE = '[Invalid Password / Keychain Locked]'
 
     def __init__(self, filepath, unlock_password=None, unlock_key=None, unlock_file=None):
+        ## DEBUG:
+        print("This is the filepath passed inside of the Chainbreaker class: " + filepath)
         self._filepath = None
         self._unlock_password = None
         self._unlock_key = None
@@ -562,8 +564,6 @@ class Chainbreaker(object):
 
     @filepath.setter
     def filepath(self, value):
-        ## DEBUG:
-        print("This is the value inside of filepath.setter: " + value)
         self._filepath = value
         if self._filepath:
             self._read_keychain_to_buffer()
