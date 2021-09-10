@@ -35,7 +35,7 @@ import sys
 
 class Chainbreaker(object):
     ATOM_SIZE = 4
-    KEYCHAIN_SIGNATURE = "kych"
+    KEYCHAIN_SIGNATURE = b"kych"
     BLOCKSIZE = 8
     KEYLEN = 24
     MAGIC_CMS_IV = unhexlify('4adda22c79e82105')
