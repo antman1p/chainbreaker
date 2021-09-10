@@ -70,9 +70,6 @@ class Chainbreaker(object):
 
         self.filepath = filepath
 
-        ## DEBUG:
-        print("This is the filepath just before the buffer check : " + filepath)
-        
         if not self._is_valid_keychain():
             self.logger.warning('Keychain signature does not match. are you sure this is a valid keychain file?')
 
@@ -182,6 +179,11 @@ class Chainbreaker(object):
     # Simple check to make sure the keychain we're looking at is valid.
     # A valid keychain begins with "kych"
     def _is_valid_keychain(self):
+
+        ##DEBUG:
+        print("This is the 4 bytes kc_buffer in the validity check: " + str(self.kc_buffer[0:4]) + " Vs. the KEYCHAIN_SIG: " + Chainbreaker.KEYCHAIN_SIGNATURE)
+        sys.sdtout.flush()
+
         if self.kc_buffer[0:4] != Chainbreaker.KEYCHAIN_SIGNATURE:
             return False
         return True
