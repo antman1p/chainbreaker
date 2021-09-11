@@ -460,7 +460,9 @@ class _KEYCHAIN_TIME(object):
     STRPTIME_FORMAT = "%Y%m%d%H%M%SZ"
 
     def __init__(self, buffer):
-        buffer = b + buffer
+        buffer = bytes(buffer)
+        ##DEBUG:
+        print("BUFFER: " + str(buffer))
         self.Value = _KEYCHAIN_TIME.STRUCT.unpack(buffer)[0].strip('\x00')
         self.Time = datetime.strptime(self.Value, _KEYCHAIN_TIME.STRPTIME_FORMAT)
 
