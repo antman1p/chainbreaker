@@ -311,7 +311,7 @@ class Chainbreaker(object):
 
         try:
             ##DEBUG:
-            print("Keychain Buffer: " + str(self.kc_buffer[base_addr + pcol + pcol + 4 + real_str_len], real_str_len))
+            print("real_str_len: " + real_str_len)
             data = _LV(self.kc_buffer[base_addr + pcol + 4:base_addr + pcol + 4 + real_str_len], real_str_len).Value
         except struct.error:
             self.logger.debug('LV string length is too long.')
