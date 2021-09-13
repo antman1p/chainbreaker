@@ -311,7 +311,7 @@ class Chainbreaker(object):
 
         try:
             ##DEBUG:
-            print("Base Address: " "+ base_addr)
+            print("Base Address: " + base_addr)
             print("Base Address slice 4: " + 4:base_addr)
             data = _LV(self.kc_buffer[base_addr + pcol + 4:base_addr + pcol + 4 + real_str_len], real_str_len).Value
         except struct.error:
