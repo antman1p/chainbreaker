@@ -310,8 +310,6 @@ class Chainbreaker(object):
             real_str_len = ((str_length / 4) + 1) * 4
 
         try:
-            ##DEBUG:
-            print("pcol:baseaddr: " + str(pcol:base_addr))
             data = _LV(self.kc_buffer[base_addr + pcol + 4:int(base_addr) + pcol + 4 + real_str_len], real_str_len).Value
         except struct.error:
             self.logger.debug('LV string length is too long.')
