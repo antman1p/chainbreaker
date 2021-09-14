@@ -49,8 +49,8 @@ class PBKDF2(object):
         for i in range(len(a)):
             ##DEBUG:
             print("Type of a[i]: " + str(type(a[i])) + " Value a[i]: " + str(a[i]) + " Type of b[i]: " + str(type(b[i])) + " value of b[i]: " + str(b[i]))
-            
-            ret += chr(ord(a[i]) ^ ord(b[i]))
+
+            ret += chr(a[i] ^ b[i])
 
         return ret
 
