@@ -22,6 +22,11 @@ class PBKDF2(object):
     # this is what you want to call.
     def __init__(self, password, salt, itercount, keylen, hashfn=sha1):
         self.password = password
+        ##DEBUG:
+        print("Self.Password: " + self.password)
+        type(self.pasword)
+        type(self.hashfn)
+
         self.salt = salt
         self.itercount = itercount
         self.keylen = keylen
