@@ -32,7 +32,7 @@ class PBKDF2(object):
         if self.keylen % PBKDF2.BLOCKLEN != 0:
             l += 1
 
-        h = hmac.new(bytes(self.password), None, self.hashfn)
+        h = hmac.new(bytes(self.password, "utf-8"), None, self.hashfn)
 
         T = ""
         for i in range(1, l + 1):
