@@ -173,9 +173,7 @@ class Chainbreaker(object):
 
                 self.base_addr = _APPL_DB_HEADER.STRUCT.size + self.symmetric_key_offset + 0x38
                 self.dbblob = _DB_BLOB(self.kc_buffer[self.base_addr:self.base_addr + _DB_BLOB.STRUCT.size])
-                ##DEBUG:
-                print("dbblob.Salt: " + str(self.dbblob.Salt))
-
+                
         except OSError as e:
             self.logger.critical("Unable to read keychain: %s" % e)
 
