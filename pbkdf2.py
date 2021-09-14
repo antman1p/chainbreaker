@@ -26,10 +26,6 @@ class PBKDF2(object):
         self.itercount = itercount
         self.keylen = keylen
         self.hashfn = hashfn
-
-        ##DEBUG:
-        passwdtype = str(type(self.password))
-        hashtype = str(type(self.hashfn))
         print("passtype and hashtype: " + passwdtype + " " + hashtype)
 
         # l - number of output blocks to produce
@@ -37,7 +33,7 @@ class PBKDF2(object):
         if self.keylen % PBKDF2.BLOCKLEN != 0:
             l += 1
 
-        h = hmac.new(self.password, None, self.hashfn)
+        h = hmac.new(bytes(self.password), None, self.hashfn)
 
         T = ""
         for i in range(1, l + 1):
