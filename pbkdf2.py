@@ -22,14 +22,15 @@ class PBKDF2(object):
     # this is what you want to call.
     def __init__(self, password, salt, itercount, keylen, hashfn=sha1):
         self.password = password
-        ##DEBUG:
-        type(self.password)
-        type(self.hashfn)
-
         self.salt = salt
         self.itercount = itercount
         self.keylen = keylen
         self.hashfn = hashfn
+
+        ##DEBUG:
+        passwdtype = type(self.password)
+        hashtype = type(self.hashfn)
+        print("passtype and hashtype: " + passwdtype + " " + hashtype)
 
         # l - number of output blocks to produce
         l = self.keylen / PBKDF2.BLOCKLEN
