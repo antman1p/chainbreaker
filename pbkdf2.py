@@ -61,6 +61,9 @@ class PBKDF2(object):
     # password, it will be copy()ed and not modified.
     @staticmethod
     def _pbkdf2_f(h, salt, itercount, blocknum):
+        ### DEBUG:
+        print("h: " + str(h) + " salt: " + str(salt) + " blocknum: " + str(blocknum))
+
         U = PBKDF2._prf(h, salt + pack('>i', blocknum))
         T = U
 
