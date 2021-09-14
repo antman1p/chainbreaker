@@ -28,8 +28,8 @@ class PBKDF2(object):
         self.hashfn = hashfn
 
         ##DEBUG:
-        passwdtype = type(self.password)
-        hashtype = type(self.hashfn)
+        passwdtype = str(type(self.password))
+        hashtype = str(type(self.hashfn))
         print("passtype and hashtype: " + passwdtype + " " + hashtype)
 
         # l - number of output blocks to produce
