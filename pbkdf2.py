@@ -27,6 +27,9 @@ class PBKDF2(object):
         self.keylen = keylen
         self.hashfn = hashfn
 
+        DEBUG::
+        print("itercount: " + str(self.ietercount) + " hashfn: " + str(sefl.hashfn))
+
         # l - number of output blocks to produce
         l = int(self.keylen / PBKDF2.BLOCKLEN)
         if self.keylen % PBKDF2.BLOCKLEN != 0:
