@@ -28,7 +28,7 @@ class PBKDF2(object):
         self.hashfn = hashfn
 
         ##DEBUG:
-        print("itercount: " + str(self.ietercount) + " hashfn: " + str(sefl.hashfn) + " itercount: " + str(self.iercount))
+        print("itercount: " + str(self.itercount) + " hashfn: " + str(sefl.hashfn) + " keylength: " + str(self.keylen))
 
         # l - number of output blocks to produce
         l = int(self.keylen / PBKDF2.BLOCKLEN)
@@ -66,6 +66,7 @@ class PBKDF2(object):
     def _pbkdf2_f(h, salt, itercount, blocknum):
         ### DEBUG:
         print("h: " + str(h) + " salt: " + str(salt) + " blocknum: " + str(blocknum))
+        print("type of h: " + str(type(h)) + " type of salt: " str(type(salt)) + "type of blocknum: " + str(type(blocknum)))
 
         U = PBKDF2._prf(h, salt + pack('>i', blocknum))
         T = U
