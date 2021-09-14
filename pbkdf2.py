@@ -47,7 +47,7 @@ class PBKDF2(object):
 
         ret = ''
         for i in range(len(a)):
-            ret += chr(ord(a[i]) ^ ord(b[i]))
+            ret += chr(ord(str(a[i])) ^ ord(str(b[i])))
 
         return ret
 
